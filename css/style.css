@@ -1,0 +1,36 @@
+/* EXTERNAL FONTS ------------
+* <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet">
+* font-family: 'Red Hat Display', sans-serif;
+-----------------------------*/
+
+/* COLORS */
+
+
+/* General reset */
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* set up the body */
+body {
+  font-family: 'Red Hat Display', sans-serif;;
+  /* font-size: ;
+  color: ;
+  line-height: ; */
+  min-height: 100vh;
+}
+
+/* Work easy with img and picture */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+.main{
+  height: 100vh;
+  background: hsl(225, 100%, 94%);
+}
