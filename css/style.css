@@ -15,10 +15,7 @@
 
 /* set up the body */
 body {
-  font-family: 'Red Hat Display', sans-serif;;
-  /* font-size: ;
-  color: ;
-  line-height: ; */
+  font-family: 'Red Hat Display', sans-serif;
   min-height: 100vh;
 }
 
@@ -28,7 +25,39 @@ picture {
   max-width: 100%;
   display: block;
 }
+ /* UTILITY CLASSES */
+ 
+ /* Layout */
+ .container{
+   width: 50%;
+ }
+.row{
+  display: flex; /* it sets flex-direction: row as standard value - no need to write */
+}
+.col{
+  width: 100%; /* even without flex this setting allow you to have equal columns*/
+}
+.f-column{
+  display: flex;
+  flex-direction: column;
+}
+.h-centered{
+  margin-inline: auto;
+}
+.v-centered{justify-content: center;}
+
+/*  Mobile layout first */
+
 .main{
+  position: absolute;
   height: 100vh;
-  background: hsl(225, 100%, 94%);
+  background: url("../images/pattern-background-mobile.svg") no-repeat, linear-gradient(to bottom, hsl(225, 100%, 94%), hsl(225, 100%, 94%));
+  background-size: 100%;
+}
+
+.summary{
+  height: 50%;
+  border-radius: 25px;
+  border: 1px solid purple;
+  overflow: hidden;
 }
