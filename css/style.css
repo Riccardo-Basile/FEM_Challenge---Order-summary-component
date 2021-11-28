@@ -13,10 +13,35 @@
   box-sizing: border-box;
 }
 
+/*  COLORS   */
+
+/*### Primary
+*- Pale blue: hsl(225, 100%, 94%)
+*- Bright blue: hsl(245, 75%, 52%)
+
+*### Neutral
+*- Very pale blue: hsl(225, 100%, 98%)
+*- Desaturated blue: hsl(224, 23%, 55%)
+*- Dark blue: hsl(223, 47%, 23%)
+*/
+html{
+  --paleblue-clr: hsl(225, 100%, 94%);
+  --brightblue-clr: hsl(245, 75%, 52%);
+
+  --very-paleblue-clr: hsl(225, 100%, 98%);
+  --desaturatedblue-clr: hsl(224, 23%, 55%);
+  --darkblue-clr: hsl(223, 47%, 23%);
+
+  --btn-shadow-clr: hsla(245, 75%, 52%, 0.171);
+}
+
+
 /* set up the body */
 body {
   font-family: 'Red Hat Display', sans-serif;
-  min-height: 100vh;
+  letter-spacing: .0125em;
+  height: 100vh;
+  overflow: none;
 }
 
 /* Work easy with img and picture */
@@ -29,7 +54,8 @@ picture {
  
  /* Layout */
  .container{
-   width: 50%;
+   width: 88%;
+   margin-inline: auto;
  }
 .row{
   display: flex; /* it sets flex-direction: row as standard value - no need to write */
@@ -46,18 +72,119 @@ picture {
 }
 .v-centered{justify-content: center;}
 
-/*  Mobile layout first */
+
+/* ---------------------------- BASIC LAYOUT - START WITH MOBILE ------------------------------- */
 
 .main{
   position: absolute;
+  width: 100%;
   height: 100vh;
-  background: url("../images/pattern-background-mobile.svg") no-repeat, linear-gradient(to bottom, hsl(225, 100%, 94%), hsl(225, 100%, 94%));
+  background: url("../images/pattern-background-mobile.svg") no-repeat, linear-gradient(to bottom, var(--paleblue-clr), var(--paleblue-clr));
   background-size: 100%;
 }
 
+
+.hero-title,
+.hero-text,
+.select-plan,
+.btn-pay,
+.btn-cancel{
+  margin-inline: auto;
+}
+
+/* ---------------------------- THE WHOLE SUMMARY ------------------------------- */
 .summary{
-  height: 50%;
+  width: 21rem;
   border-radius: 25px;
-  border: 1px solid purple;
   overflow: hidden;
+  background: white;
+  text-align: center;
+  margin-inline: auto;
+  color: var(--desaturatedblue-clr);
+}
+
+/* ---------------------------- SUMMARY TEXT ------------------------------- */
+.summary-description{
+  font-size: 1rem;
+  font-weight: 500;
+  width: 80%;
+  margin-inline: auto;
+}
+.hero-title,
+.plan-name{
+  color: hsl(223, 47%, 23%);
+}
+.hero-title{
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 1.5em auto 1em;
+}
+.hero-text{
+  margin-bottom: 1.5em;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+
+/* ---------------------------- PLAN SELECTION ------------------------------- */
+.select-plan{
+  width: 85%;
+  background:var(--very-paleblue-clr);
+  border-radius: 10px;
+  padding: 1em 1.25em 1.25em;
+  align-items: center;
+  font-size: .75rem;
+  margin-bottom: 2.25em;
+}
+.actual-plan{
+  text-align: center;
+  margin-inline: 1.5em 4em;
+}
+.plan-name{
+  font-weight: 900;
+}
+.plan-price{
+  font-size: .9rem;
+}
+.plan-change{
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--brightblue-clr);
+}
+
+
+/* ---------------------------- BUTTONS ------------------------------- */
+
+.btn-pay,
+.btn-cancel{
+  width: 85%;
+  font-size: .9rem;
+  font-weight: 700;
+  border-radius: 10px;
+}
+
+.btn-pay{
+  background: var(--brightblue-clr);
+  color:hsl(225, 100%, 98%);
+  padding: 1.125em 0;
+  box-shadow: 0px 23px 20px 2px var(--btn-shadow-clr);
+}
+
+.btn-cancel{
+  background-color: transparent;
+  padding: .75em 0;
+  margin: 1em auto 1.5em;
+}
+
+
+
+
+@media (min-width: 800px){
+  .main{
+   background: url("../images/pattern-background-desktop.svg") no-repeat, linear-gradient(to bottom, var(--paleblue-clr), var(--paleblue-clr));
+   background-size: 100% 50%;
+  }
+  .container{
+    max-width: 1440px;
+  }
 }
